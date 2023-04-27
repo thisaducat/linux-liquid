@@ -22,7 +22,7 @@ banner() {
 		${C}    |     Liquid-Linux     |
 		${G}    ------------------------
 	EOF
-	echo -e "${G}     A modded gui version of ubuntu for Termux\n"
+	
 }
 
 note() {

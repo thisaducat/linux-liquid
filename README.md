@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/github/issues/thisaducat/linux-liquid?color=red&style=flat-square">
 <img src="https://img.shields.io/github/forks/thisaducat/linux-liquid?color=teal&style=flat-square">
 </p>
-<p align="center"><b>Run Ubuntu GUI on your termux with much features.</b></p>
+<p align="center"><b>Virtual Linux Client for Termux</b></p>
 
 ### Features
 

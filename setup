@@ -195,7 +195,7 @@ permission() {
 
 	echo "$(getprop persist.sys.timezone)" > $UBUNTU_DIR/etc/timezone
 
-	echo "proot-distro login liquid --isolated" > $PREFIX/bin/liquid
+	echo "proot-distro login liquid" > $PREFIX/bin/liquid
 
 	chmod +x "$PREFIX/bin/liquid"
 

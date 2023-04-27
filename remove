@@ -8,20 +8,22 @@ C="$(printf '\033[1;36m')"
 W="$(printf '\033[1;37m')"
 
 banner() {
-    clear
-    printf "\033[33m    _  _ ___  _  _ _  _ ___ _  _    _  _ ____ ___  \033[0m\n"
-    printf "\033[36m    |  | |__] |  | |\ |  |  |  |    |\/| |  | |  \ \033[0m\n"
-    printf "\033[32m    |__| |__] |__| | \|  |  |__|    |  | |__| |__/ \033[0m\n"
-    printf "\033[0m\n"
-    printf "     \033[32mA modded gui version of ubuntu for Termux\033[0m\n"
-    printf "\033[0m\n"
+
+		cat <<- EOF
+		${Y}    ------------------------
+		${C}    |     Liquid-Linux     |
+		${G}    ------------------------
+	EOF
+
+	echo -e "${G}     Virtual linux client for Termux"${W}
+	echo -e "     Powered by ${G}U${R}b${Y}u${C}n${B}t${G}u ${R}M${Y}o${B}d\n\n"${W}
 
 }
 
 package() {
     echo -e "${R} [${W}-${R}]${C} Purging packages..."${W}
-    proot-distro remove ubuntu && proot-distro clear-cache
-    rm -rf $PREFIX/bin/ubuntu
+    proot-distro remove liquid && proot-distro clear-cache
+    rm -rf $PREFIX/bin/liquid
     sed -i '/pulseaudio --start --exit-idle-time=-1/d' ~/.sound
     sed -i '/pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1/d' ~/.sound
     echo -e "${R} [${W}-${R}]${C} Purging Completed !"${W}

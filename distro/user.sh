@@ -36,21 +36,20 @@ login() {
     echo "${user}:${pass}" | chpasswd
     echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
     echo "proot-distro login --user $user liquid --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/liquid
-    #chmod +x /data/data/com.termux/files/usr/bin/ubuntu 
+    chmod +x /data/data/com.termux/files/usr/bin/liquid
     
-    if [[ -e '/data/data/com.termux/files/home/modded-ubuntu/distro/gui.sh' ]];then
-        cp /data/data/com.termux/files/home/modded-ubuntu/distro/gui.sh /home/$user/gui.sh
-        chmod +x /home/$user/gui.sh
+    if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
+        cp /data/data/com.termux/files/home/linux-distro/distro/gui.sh /bin/continue-last
+        chmod +x /bin/continue-last
     else
-        wget -q --show-progress https://raw.githubusercontent.com/modded-ubuntu/modded-ubuntu/master/distro/gui.sh
-        mv -vf gui.sh /home/$user/gui.sh
-        chmod +x /home/$user/gui.sh
+        wget -q --show-progress https://raw.githubusercontent.com/thisaducat/linux-liquid/master/distro/gui.sh
+        mv -vf gui.sh /bin/continue-last
+        chmod +x /bin/continue-last
     fi
 
     clear
     echo
-    echo -e "\n${R} [${W}-${R}]${G} Restart your Termux & Type ${C}liquid"${W}
-    echo -e "\n${R} [${W}-${R}]${G} Then Type ${C}sudo bash gui.sh "${W}
+    echo -e "\n${R} [${W}-${R}]${G} Restart Liquid & Type ${C}continue-last"${W}
     echo
 
 }

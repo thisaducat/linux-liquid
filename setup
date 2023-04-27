@@ -179,17 +179,17 @@ permission() {
 
 	if [[ -d "$CURR_DIR/distro" ]] && [[ -e "$CURR_DIR/distro/user.sh" ]]; then
 
-		cp -f "$CURR_DIR/distro/user.sh" "$UBUNTU_DIR/root/user.sh"
+		cp -f "$CURR_DIR/distro/user.sh" "$UBUNTU_DIR/bin/continue-setup"
 
 	else
 
 		downloader "$CURR_DIR/user.sh" "https://raw.githubusercontent.com/thisaducat/linux-liquid/master/distro/user.sh"
 
-		mv -f "$CURR_DIR/user.sh" "$UBUNTU_DIR/root/user.sh"
+		mv -f "$CURR_DIR/user.sh" "$UBUNTU_DIR/bin/continue-setup"
 
 	fi
 
-	chmod +x $UBUNTU_DIR/root/user.sh
+	chmod +x $UBUNTU_DIR/bin/continue-setup
 
 	setup_vnc
 
@@ -201,7 +201,7 @@ permission() {
 
 	termux-reload-settings
 
-	if [[ -e "$PREFIX/bin/ubuntu" ]]; then
+	if [[ -e "$PREFIX/bin/liquid" ]]; then
 
 		banner
 
@@ -213,9 +213,9 @@ permission() {
 
 			${R} [${W}-${R}]${G} Type ${C}liquid${G} to run Liquid CLI.
 
-			${R} [${W}-${R}]${G} If you Want to Use LIQUID with GUI then ,
+			${R} [${W}-${R}]${G} If you Want to finish setup ,
 
-			${R} [${W}-${R}]${G} Run ${C}liquid${G} first & then type ${C}bash user.sh${W}
+			${R} [${W}-${R}]${G} Run ${C}liquid${G} first & then type ${C}continue-setup${W}
 
 		EOF
 
@@ -233,8 +233,9 @@ permission() {
 
 patch() {
         echo -e "${Y}[PATCH] ${W}Adding Liquid..."
+	sleep 1
 	chmod +x /sources/proot-liquid
-	sh /sources/proot-liquid
+	bash /sources/proot-liquid
 	echo -e "Added"
 	
 }

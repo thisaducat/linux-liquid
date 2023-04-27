@@ -8,9 +8,9 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Written%20In-Bash-darkgreen?style=flat-square">
 <img src="https://img.shields.io/badge/Open%20Source-Yes-darkviolet?style=flat-square">
-<img src="https://img.shields.io/github/stars/modded-ubuntu/modded-ubuntu?style=flat-square">
-<img src="https://img.shields.io/github/issues/modded-ubuntu/modded-ubuntu?color=red&style=flat-square">
-<img src="https://img.shields.io/github/forks/modded-ubuntu/modded-ubuntu?color=teal&style=flat-square">
+<img src="https://img.shields.io/github/stars/thisaducat/linux-liquid?style=flat-square">
+<img src="https://img.shields.io/github/issues/thisaducat/linux-liquid?color=red&style=flat-square">
+<img src="https://img.shields.io/github/forks/thisaducat/linux-liquid?color=teal&style=flat-square">
 </p>
 <p align="center"><b>Run Ubuntu GUI on your termux with much features.</b></p>
 

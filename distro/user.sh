@@ -7,13 +7,12 @@ W="$(printf '\033[1;37m')"
 C="$(printf '\033[1;36m')"
 
 banner() {
-    clear
-    printf "\033[33m    _  _ ___  _  _ _  _ ___ _  _    _  _ ____ ___  \033[0m\n"
-    printf "\033[36m    |  | |__] |  | |\ |  |  |  |    |\/| |  | |  \ \033[0m\n"
-    printf "\033[32m    |__| |__] |__| | \|  |  |__|    |  | |__| |__/ \033[0m\n"
-    printf "\033[0m\n"
-    printf "     \033[32mA modded gui version of ubuntu for Termux\033[0m\n"
-    printf "\033[0m\n"
+
+		cat <<- EOF
+		${Y}    ------------------------
+		${C}    |     Liquid-Linux     |
+		${G}    ------------------------
+	EOF
 
 }
 
@@ -36,7 +35,7 @@ login() {
     usermod -aG sudo ${user}
     echo "${user}:${pass}" | chpasswd
     echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
-    echo "proot-distro login --user $user ubuntu --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/ubuntu
+    echo "proot-distro login --user $user liquid --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/liquid
     #chmod +x /data/data/com.termux/files/usr/bin/ubuntu 
     
     if [[ -e '/data/data/com.termux/files/home/modded-ubuntu/distro/gui.sh' ]];then
@@ -50,7 +49,7 @@ login() {
 
     clear
     echo
-    echo -e "\n${R} [${W}-${R}]${G} Restart your Termux & Type ${C}ubuntu"${W}
+    echo -e "\n${R} [${W}-${R}]${G} Restart your Termux & Type ${C}liquid"${W}
     echo -e "\n${R} [${W}-${R}]${G} Then Type ${C}sudo bash gui.sh "${W}
     echo
 

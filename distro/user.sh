@@ -35,6 +35,7 @@ login() {
     usermod -aG sudo ${user}
     echo "${user}:${pass}" | chpasswd
     echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+    cp /data/data/com.termux/files/home/linux-liquid/distro/.bashrc $user/.bashrc
     echo "proot-distro login --user $user liquid --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/liquid
     chmod +x /data/data/com.termux/files/usr/bin/liquid
     

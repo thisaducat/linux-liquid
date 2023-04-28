@@ -235,8 +235,10 @@ patch() {
         echo -e "${Y}[PATCH] ${W}Adding Liquid..."
 	sleep 1
 	chmod +x sources/proot-liquid
-	bash sources/proot-liquid
-	echo -e "Added"
+	cd sources
+	bash proot-liquid
+	cd ..
+	echo -e "PATCHED!!!"
 	
 }
 

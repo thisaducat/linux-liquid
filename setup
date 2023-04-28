@@ -51,7 +51,7 @@ package() {
 
 		yes | pkg upgrade
 
-		packs=(pulseaudio proot-distro)
+		packs=(pulseaudio proot-distro proot)
 
 		for x in "${packs[@]}"; do
 
